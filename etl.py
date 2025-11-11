@@ -7,4 +7,4 @@ df = spark.read.csv("/mnt/raw/customers.csv", header=True, inferSchema=True)
 clean_df = df.dropna(subset=["customer_id"]).dropDuplicates(["customer_id"])
 
 clean_df.write.mode("overwrite").parquet("/mnt/bronze/customers_clean")
-print("✅ ETL completed successfully.")
+print(" ETL completed successfully.")
